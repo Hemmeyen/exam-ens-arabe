@@ -1,0 +1,21 @@
+name: Validate exams
+
+on:
+  push:
+    paths:
+      - "exams/**"
+      - "tools/valider.mjs"
+  pull_request:
+    paths:
+      - "exams/**"
+      - "tools/valider.mjs"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/valider.mjs

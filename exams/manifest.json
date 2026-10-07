@@ -1,0 +1,29 @@
+{
+  "site_titre": "التحضير لمسابقة اكتتاب المعلمين — معلم رئيسي عربي",
+  "site_sous_titre": "اختبارات تجريبية قابلة للتوسعة بصيغة QCM",
+  "description": "مشروع اختبارات مستمر: يضاف كل موضوع جديد في ملف JSON مستقل، ثم يسجل في manifest.json دون تغيير منطق الموقع.",
+  "version_manifeste": "2026-AR-A",
+  "domaines": [
+    "اللغة العربية",
+    "الرياضيات",
+    "التربية الإسلامية"
+  ],
+  "epreuves": [
+    {
+      "slug": "enseignant-principal-arabe-A",
+      "fichier": "exams/enseignant-principal-arabe-A.json",
+      "titre": "الاختبار أ — محاكاة شاملة",
+      "resume": "60 سؤالًا باللغة العربية: 30 في اللغة العربية، 20 في الرياضيات، و10 في التربية الإسلامية. بارème موزع على 120 نقطة.",
+      "niveau": "متدرج: أساسي إلى تحليلي",
+      "questions": 60,
+      "duree_min": 180,
+      "total_points": 120.0,
+      "statut": "publie"
+    }
+  ],
+  "domaines_epreuve_D": [
+    "اللغة العربية",
+    "الرياضيات",
+    "التربية الإسلامية"
+  ]
+}
