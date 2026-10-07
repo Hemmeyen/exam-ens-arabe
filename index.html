@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f3f32" />
+  <meta name="color-scheme" content="light" />
+  <title>التحضير لمسابقة معلم رئيسي عربي</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#f5f1e8;
+      --paper:#fffdf8;
+      --paper-2:#fbf7ee;
+      --ink:#16241f;
+      --muted:#68766f;
+      --line:#ded8ca;
+      --green:#0f3f32;
+      --green-2:#17604b;
+      --green-3:#dfece6;
+      --gold:#c79337;
+      --gold-2:#f0dfb5;
+      --red:#a6453c;
+      --red-soft:#faece9;
+      --ok:#23704f;
+      --ok-soft:#e9f5ef;
+      --amber:#b8791c;
+      --amber-soft:#fff3da;
+      --shadow:0 22px 60px rgba(24,50,39,.10);
+      --shadow-sm:0 8px 24px rgba(24,50,39,.07);
+      --radius:22px;
+      --radius-sm:14px;
+      --font-body:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif;
+      --font-display:"Noto Kufi Arabic","IBM Plex Sans Arabic",Tahoma,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(199,147,55,.09), transparent 28rem),
+        radial-gradient(circle at 92% 0%, rgba(15,63,50,.08), transparent 34rem),
+        var(--bg);
+      font-family:var(--font-body);
+      font-size:16px;
+      line-height:1.75;
+      -webkit-font-smoothing:antialiased;
+    }
+    button,input{font:inherit}
+    button{cursor:pointer}
+    button:disabled{cursor:not-allowed}
+    a{color:inherit}
+    [hidden],.hidden{display:none!important}
+    :focus-visible{outline:3px solid rgba(199,147,55,.75);outline-offset:3px}
+
+    .shell{width:min(1160px,calc(100% - 32px));margin-inline:auto}
+
+    /* ---------- Header / Hero ---------- */
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.13);
+      background:rgba(15,63,50,.93);
+      backdrop-filter:blur(18px);
+      color:#fff;
+    }
+    .topbar-inner{min-height:66px;display:flex;align-items:center;gap:14px}
+    .brand-mark{
+      width:40px;height:40px;flex:0 0 40px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,#d6ad5d,#b97924);
+      color:#12392f;font-family:var(--font-display);font-weight:800;font-size:18px;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+    }
+    .brand-text{min-width:0;flex:1}
+    .brand-text strong{display:block;font-family:var(--font-display);font-size:14px;line-height:1.45}
+    .brand-text span{display:block;color:#bad1c8;font-size:11px;line-height:1.4}
+    .live-pill{
+      display:flex;align-items:center;gap:8px;white-space:nowrap;
+      border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);
+      border-radius:999px;padding:8px 12px;font-size:12px;color:#eff8f4;
+    }
+    .live-dot{width:7px;height:7px;border-radius:50%;background:#efc971;box-shadow:0 0 0 4px rgba(239,201,113,.12)}
+
+    .hero{
+      position:relative;overflow:hidden;
+      background:linear-gradient(128deg,#0b352a 0%,#0f4a3a 58%,#0c3d30 100%);
+      color:white;padding:76px 0 72px;
+      border-bottom:1px solid rgba(15,63,50,.18);
+    }
+    .hero::before,.hero::after{content:"";position:absolute;pointer-events:none}
+    .hero::before{
+      inset:auto -130px -220px auto;width:520px;height:520px;border:1px solid rgba(239,201,113,.18);
+      border-radius:50%;box-shadow:0 0 0 55px rgba(239,201,113,.035),0 0 0 110px rgba(239,201,113,.02)
+    }
+    .hero::after{
+      inset:-140px auto auto -80px;width:380px;height:380px;opacity:.4;
+      background-image:linear-gradient(30deg,transparent 46%,rgba(255,255,255,.055) 47% 53%,transparent 54%),linear-gradient(150deg,transparent 46%,rgba(255,255,255,.045) 47% 53%,transparent 54%);
+      background-size:42px 74px;
+      transform:rotate(8deg)
+    }
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);gap:52px;align-items:center}
+    .kicker{display:flex;align-items:center;gap:9px;margin:0 0 16px;color:#efd493;font-weight:600;font-size:13px}
+    .kicker::before{content:"";width:38px;height:2px;background:#d9a84e;border-radius:3px}
+    .hero h1{font-family:var(--font-display);font-size:clamp(34px,5vw,60px);line-height:1.35;margin:0;letter-spacing:-.03em}
+    .hero-sub{max-width:760px;margin:18px 0 0;color:#d4e4de;font-size:18px}
+    .hero-note{display:inline-flex;align-items:center;gap:8px;margin-top:22px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.065);padding:9px 12px;border-radius:12px;color:#dceae5;font-size:12px}
+    .hero-note svg{width:16px;height:16px;color:#e9c779}
+
+    .hero-card{
+      position:relative;padding:24px;border:1px solid rgba(255,255,255,.14);border-radius:28px;
+      background:linear-gradient(150deg,rgba(255,255,255,.12),rgba(255,255,255,.055));
+      backdrop-filter:blur(12px);box-shadow:0 24px 70px rgba(2,23,17,.24)
+    }
+    .hero-card-label{color:#bdd3cb;font-size:12px;margin-bottom:14px}
+    .hero-stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .hero-stat > div{background:rgba(4,31,24,.25);border:1px solid rgba(255,255,255,.09);padding:14px;border-radius:15px}
+    .hero-stat b{display:block;font-family:var(--font-display);font-size:22px;line-height:1.3;color:#f1d28e}
+    .hero-stat span{display:block;font-size:11px;color:#c5d8d1;margin-top:4px}
+    .hero-domains{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+    .hero-domains span{font-size:11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);padding:6px 9px;border-radius:999px;color:#e7f1ed}
+
+    /* ---------- Main ---------- */
+    main{padding:38px 0 90px}
+    .section-title{display:flex;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
+    .section-title h2{font-family:var(--font-display);font-size:25px;line-height:1.4;margin:0}
+    .section-title p{margin:3px 0 0;color:var(--muted);font-size:14px}
+    .section-count{font-size:12px;color:var(--muted);padding:7px 11px;border:1px solid var(--line);background:rgba(255,255,255,.45);border-radius:999px;white-space:nowrap}
+
+    .panel{background:rgba(255,253,248,.94);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+
+    /* ---------- Catalogue ---------- */
+    .exam-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .exam-card{
+      position:relative;overflow:hidden;width:100%;text-align:right;border:1px solid var(--line);border-radius:20px;
+      background:var(--paper);padding:22px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+      color:var(--ink)
+    }
+    .exam-card:hover{transform:translateY(-3px);border-color:#b8c8c0;box-shadow:var(--shadow)}
+    .exam-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--green),var(--gold))}
+    .exam-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+    .exam-icon{width:48px;height:48px;flex:0 0 48px;border-radius:16px;background:var(--green-3);color:var(--green);display:grid;place-items:center}
+    .exam-icon svg{width:24px;height:24px}
+    .exam-title{flex:1;min-width:0}
+    .exam-title b{display:block;font-family:var(--font-display);font-size:18px;line-height:1.55}
+    .exam-summary{margin:12px 0 0;color:var(--muted);font-size:13.5px;min-height:48px}
+    .exam-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+    .meta-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border-radius:999px;background:var(--paper-2);border:1px solid #ebe4d8;color:#5c6963;font-size:11px}
+    .meta-chip svg{width:13px;height:13px}
+    .exam-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-top:16px;border-top:1px dashed #ded9cf}
+    .open-label{font-weight:700;color:var(--green);font-size:13px;display:inline-flex;align-items:center;gap:6px}
+    .open-label svg{width:16px;height:16px;transition:transform .2s ease}
+    .exam-card:hover .open-label svg{transform:translateX(-3px)}
+    .status{padding:5px 9px;border-radius:999px;font-size:10px;font-weight:700;background:var(--ok-soft);color:var(--ok)}
+    .status.draft{background:var(--amber-soft);color:var(--amber)}
+    .exam-card:disabled{opacity:.56;transform:none;box-shadow:none;cursor:not-allowed}
+    .empty-state{padding:34px;text-align:center;color:var(--muted)}
+
+    /* ---------- Briefing ---------- */
+    .briefing{padding:28px}
+    .back-link{border:0;background:transparent;color:var(--muted);padding:0 0 13px;font-size:13px;display:inline-flex;align-items:center;gap:6px}
+    .back-link:hover{color:var(--green)}
+    .back-link svg{width:16px;height:16px}
+    .brief-title{font-family:var(--font-display);font-size:27px;line-height:1.55;margin:0}
+    .brief-desc{color:var(--muted);margin:7px 0 0}
+    .quick-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:22px 0 26px}
+    .fact{background:var(--paper-2);border:1px solid #e7e0d3;border-radius:15px;padding:13px}
+    .fact span{display:block;color:var(--muted);font-size:10px;margin-bottom:3px}
+    .fact b{font-family:var(--font-display);font-size:15px}
+    .subheading{font-family:var(--font-display);font-size:16px;margin:24px 0 10px}
+
+    .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mode-card{
+      position:relative;text-align:right;border:1px solid var(--line);background:#fff;border-radius:18px;padding:18px;color:var(--ink);transition:.2s ease
+    }
+    .mode-card:hover{border-color:#b6c6be;background:#fffefa}
+    .mode-card[aria-pressed="true"]{border-color:var(--green);box-shadow:0 0 0 3px rgba(15,63,50,.08);background:#f5fbf8}
+    .mode-top{display:flex;align-items:center;gap:10px}
+    .mode-ico{width:39px;height:39px;border-radius:12px;background:var(--green-3);display:grid;place-items:center;color:var(--green)}
+    .mode-ico svg{width:20px;height:20px}
+    .mode-card b{font-family:var(--font-display);font-size:15px}
+    .mode-card p{margin:8px 0 0;color:var(--muted);font-size:12.5px}
+    .checkmark{position:absolute;top:14px;left:14px;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:transparent;background:#fff}
+    .mode-card[aria-pressed="true"] .checkmark{background:var(--green);border-color:var(--green);color:#fff}
+    .checkmark svg{width:13px;height:13px}
+
+    .notice{display:flex;gap:10px;margin-top:18px;padding:13px 15px;border:1px solid #eadcb9;background:#fff9ea;border-radius:14px;color:#705c2e;font-size:12.5px}
+    .notice svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px}
+    .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:24px}
+    .btn{border:0;border-radius:13px;padding:12px 20px;font-weight:700;transition:.18s ease}
+    .btn-primary{background:linear-gradient(135deg,var(--green),#185b47);color:white;box-shadow:0 10px 28px rgba(15,63,50,.18)}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(15,63,50,.22)}
+    .btn-secondary{background:#fff;border:1px solid var(--line);color:var(--ink)}
+    .btn-secondary:hover{background:var(--paper-2)}
+    .btn-danger{background:var(--red-soft);color:var(--red);border:1px solid #f0cfca}
+    .btn:disabled{opacity:.45;transform:none;box-shadow:none}
+
+    /* ---------- Exam workspace ---------- */
+    .exam-workspace{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:18px;align-items:start}
+    .question-panel{overflow:hidden}
+    .question-top{
+      display:flex;align-items:center;gap:12px;justify-content:space-between;padding:17px 20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fffefa,#fffaf1)
+    }
+    .q-counter{font-family:var(--font-display);font-size:13px}
+    .q-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .q-tag{font-size:10px;padding:5px 8px;border-radius:999px;background:#f2eee5;color:#65716b;border:1px solid #e4ded2}
+    .q-tag.points{color:#806020;background:#fff5df;border-color:#ecd7a7}
+    .question-body{padding:28px 26px 24px}
+    .question-text{white-space:pre-wrap;font-size:19px;line-height:1.95;font-weight:600;margin-bottom:18px}
+    .instruction{display:flex;align-items:center;gap:7px;color:var(--green-2);font-size:12px;margin-bottom:12px}
+    .instruction svg{width:15px;height:15px}
+
+    .option{
+      position:relative;display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);background:#fff;border-radius:15px;
+      padding:14px 15px;margin-bottom:9px;cursor:pointer;transition:.17s ease
+    }
+    .option:hover{border-color:#acc1b7;background:#fffefa}
+    .option.selected{border-color:var(--green);background:#f3faf7;box-shadow:0 0 0 2px rgba(15,63,50,.045)}
+    .option input{position:absolute;opacity:0;pointer-events:none}
+    .choice-mark{width:24px;height:24px;flex:0 0 24px;border:1.5px solid #b8c1bc;background:white;display:grid;place-items:center;margin-top:1px;color:transparent;transition:.16s ease}
+    .option.radio .choice-mark{border-radius:50%}
+    .option.checkbox .choice-mark{border-radius:7px}
+    .option.selected .choice-mark{border-color:var(--green);background:var(--green);color:#fff}
+    .choice-mark svg{width:14px;height:14px}
+    .choice-text{flex:1;min-width:0;font-size:15px;line-height:1.75}
+    .option.locked{cursor:default}
+    .option.locked:hover{background:#fff;border-color:var(--line)}
+
+    .question-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding-top:18px;margin-top:12px;border-top:1px dashed var(--line)}
+    .grow{flex:1}
+
+    .sidebar{position:sticky;top:84px;display:flex;flex-direction:column;gap:12px}
+    .side-card{padding:16px}
+    .side-title{display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-display);font-size:13px;margin-bottom:12px}
+    .side-title span{color:var(--muted);font-family:var(--font-body);font-size:10px;font-weight:500}
+    .progress-track{height:8px;border-radius:999px;background:#ece8de;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--green),#3a876d);width:0;border-radius:inherit;transition:width .25s ease}
+    .progress-line{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:7px}
+    .timer-box{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .timer{direction:ltr;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:23px;font-weight:700;letter-spacing:.02em;color:var(--green)}
+    .timer.danger{color:var(--red);animation:pulse 1.1s ease-in-out infinite}
+    @keyframes pulse{50%{opacity:.48}}
+    .nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+    .qnav{aspect-ratio:1;border:1px solid var(--line);background:#fff;border-radius:9px;font-size:11px;color:#6f7974;padding:0}
+    .qnav:hover{border-color:#91a99e}
+    .qnav.answered{background:var(--green-3);border-color:#b8d2c5;color:var(--green);font-weight:700}
+    .qnav.marked{background:var(--amber-soft);border-color:#e7c985;color:#966513}
+    .qnav.current{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 0 0 3px rgba(15,63,50,.09)}
+    .legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:12px;color:var(--muted);font-size:10px}
+    .legend span{display:flex;align-items:center;gap:5px}
+    .dot{width:8px;height:8px;border-radius:3px;background:#fff;border:1px solid var(--line)}
+    .dot.ans{background:var(--green-3);border-color:#b8d2c5}.dot.mark{background:var(--amber-soft);border-color:#e7c985}.dot.cur{background:var(--green);border-color:var(--green)}
+
+    /* ---------- Training feedback ---------- */
+    .feedback-card{margin-top:18px;border-radius:16px;padding:16px;border:1px solid var(--line);background:#fbfaf6}
+    .feedback-card.correct{border-color:#bfdbc9;background:var(--ok-soft)}
+    .feedback-card.partial{border-color:#ead59e;background:var(--amber-soft)}
+    .feedback-card.wrong{border-color:#ebc9c4;background:var(--red-soft)}
+    .feedback-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .feedback-head strong{font-family:var(--font-display);font-size:14px}
+    .feedback-score{font-size:12px;font-weight:700}
+    .review-option{padding:11px 12px;background:rgba(255,255,255,.78);border:1px solid rgba(120,120,110,.20);border-radius:12px;margin-top:8px}
+    .review-option.good{border-color:#acd0ba;background:#f8fcfa}
+    .review-option.bad-picked{border-color:#e1aba5;background:#fff8f7}
+    .review-label{font-size:10px;font-weight:700;margin-bottom:2px;color:var(--muted)}
+    .review-label.good{color:var(--ok)}.review-label.bad{color:var(--red)}
+    .review-fb{margin-top:4px;color:var(--muted);font-size:11.5px}
+    .general-fb{margin-top:11px;padding:11px 12px;border-right:3px solid var(--green);background:rgba(255,255,255,.6);border-radius:9px;font-size:12.5px}
+    .source{margin-top:10px;color:var(--muted);font-size:10.5px}
+
+    /* ---------- Results ---------- */
+    .result-hero{overflow:hidden;position:relative;background:linear-gradient(135deg,var(--green),#155b47);border-radius:26px;color:white;padding:32px;box-shadow:var(--shadow)}
+    .result-hero::after{content:"";position:absolute;left:-50px;bottom:-95px;width:250px;height:250px;border-radius:50%;border:35px solid rgba(255,255,255,.04)}
+    .result-grid{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+    .score-ring{width:145px;height:145px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#efcc79 var(--score-angle,0deg),rgba(255,255,255,.11) 0);position:relative}
+    .score-ring::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#124a3b}
+    .score-inner{position:relative;text-align:center;z-index:1}
+    .score-inner b{display:block;font-family:var(--font-display);font-size:31px;line-height:1.2;color:#f5d891}
+    .score-inner span{font-size:10px;color:#bad5cb}
+    .result-copy h2{font-family:var(--font-display);font-size:28px;margin:0}
+    .result-copy p{color:#d4e6df;margin:7px 0 0}
+    .result-copy .verdict{display:inline-block;margin-top:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;font-size:11px;color:#f4e4ba}
+    .result-body{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    .result-card{padding:20px}
+    .result-card h3{font-family:var(--font-display);font-size:15px;margin:0 0 14px}
+    .domain-row{margin-bottom:13px}
+    .domain-head{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:5px}
+    .domain-head b{font-weight:600}.domain-head span{color:var(--muted);font-size:11px}
+    .domain-bar{height:8px;background:#eee9df;border-radius:999px;overflow:hidden}
+    .domain-fill{height:100%;width:0;background:var(--green);border-radius:inherit;transition:width .8s ease}
+    .domain-fill.medium{background:var(--amber)}.domain-fill.low{background:var(--red)}
+    .review-list{margin-top:16px}
+    .review-item{padding:18px;margin-bottom:11px;border-radius:17px;border:1px solid var(--line);background:var(--paper);border-right-width:5px}
+    .review-item.correct{border-right-color:var(--ok)}.review-item.partial{border-right-color:var(--amber)}.review-item.wrong{border-right-color:var(--red)}
+    .review-item .question-text{font-size:15px;margin:7px 0 12px}
+
+    /* ---------- Loading / Error / Footer ---------- */
+    .skeleton{height:210px;border-radius:20px;background:linear-gradient(100deg,#eee9df 20%,#f7f3eb 40%,#eee9df 60%);background-size:200% 100%;animation:shine 1.4s infinite}
+    @keyframes shine{to{background-position:-200% 0}}
+    .error-box{padding:22px;border-radius:18px;background:var(--red-soft);border:1px solid #edc9c4;color:#743934}
+    .error-box b{display:block;font-family:var(--font-display);margin-bottom:4px}
+    code{direction:ltr;unicode-bidi:embed;background:#ede8dc;border-radius:6px;padding:2px 6px;font-size:11px}
+    footer{padding:0 0 40px;color:#79857f;text-align:center;font-size:11px}
+    footer span{display:inline-block;margin-inline:4px}
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:920px){
+      .hero{padding:58px 0}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-card{max-width:620px}
+      .exam-workspace{grid-template-columns:1fr}.sidebar{position:static;order:-1}.sidebar .nav-card{display:none}
+      .result-body{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      .shell{width:min(100% - 22px,1160px)}
+      .brand-text span{display:none}.live-pill{padding:7px 9px}.live-pill span:last-child{display:none}
+      .hero{padding:42px 0 44px}.hero h1{font-size:32px}.hero-sub{font-size:15px}.hero-card{padding:17px;border-radius:20px}
+      main{padding-top:24px}.exam-grid{grid-template-columns:1fr}.section-title{align-items:flex-start}.section-count{display:none}
+      .briefing{padding:19px}.quick-facts{grid-template-columns:1fr 1fr}.mode-grid{grid-template-columns:1fr}
+      .question-top{align-items:flex-start;flex-direction:column}.question-body{padding:21px 16px}.question-text{font-size:17px}.question-actions .btn{flex:1 1 calc(50% - 6px)}
+      .result-hero{padding:24px 18px}.result-grid{grid-template-columns:1fr;text-align:center;justify-items:center}.score-ring{width:130px;height:130px}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand-mark">م</div>
+      <div class="brand-text">
+        <strong id="nav-title">التحضير للمسابقات الوطنية</strong>
+        <span id="nav-subtitle">محاكاة تدريبية غير رسمية</span>
+      </div>
+      <div class="live-pill" id="status-pill">
+        <span class="live-dot"></span>
+        <span id="status-text">جاهز</span>
+        <span id="status-extra"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="kicker">منصة تدريبية قابلة للتحديث المستمر</p>
+        <h1 id="hero-title">التحضير لمسابقة اكتتاب<br />معلم رئيسي عربي</h1>
+        <p class="hero-sub" id="hero-subtitle">اختبارات تجريبية بنمط QCM، مصممة للتدرب على اللغة العربية والرياضيات والتربية الإسلامية وفق منطق المسابقات الحديثة.</p>
+        <div class="hero-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><path d="M12 10v6M12 7h.01"/></svg>
+          <span>هذه منصة تحضيرية مستقلة وليست بوابة رسمية للجنة الوطنية للمسابقات.</span>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="ملخص المنصة">
+        <div class="hero-card-label">الاختبار الحالي</div>
+        <div class="hero-stat">
+          <div><b id="hero-exams">—</b><span>اختبار منشور</span></div>
+          <div><b id="hero-questions">—</b><span>سؤال في أحدث اختبار</span></div>
+          <div><b id="hero-duration">—</b><span>دقيقة</span></div>
+          <div><b id="hero-points">—</b><span>نقطة</span></div>
+        </div>
+        <div class="hero-domains" id="hero-domains"></div>
+      </aside>
+    </div>
+  </section>
+
+  <main class="shell">
+    <!-- Catalogue -->
+    <section id="screen-catalogue">
+      <div class="section-title">
+        <div>
+          <h2>اختر الاختبار</h2>
+          <p>كل اختبار مستقل في ملف JSON ويمكن إضافة مواضيع جديدة دون تغيير الموقع.</p>
+        </div>
+        <div class="section-count" id="catalogue-count">جارٍ التحميل…</div>
+      </div>
+      <div class="exam-grid" id="exam-list">
+        <div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+    </section>
+
+    <!-- Briefing -->
+    <section id="screen-briefing" class="hidden">
+      <div class="panel briefing">
+        <button class="back-link" id="back-catalogue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          العودة إلى قائمة الاختبارات
+        </button>
+        <h2 class="brief-title" id="brief-title"></h2>
+        <p class="brief-desc" id="brief-desc"></p>
+
+        <div class="quick-facts">
+          <div class="fact"><span>عدد الأسئلة</span><b id="fact-questions">—</b></div>
+          <div class="fact"><span>المدة</span><b id="fact-duration">—</b></div>
+          <div class="fact"><span>مجموع النقاط</span><b id="fact-points">—</b></div>
+          <div class="fact"><span>نوع الاختبار</span><b id="fact-format">QCM</b></div>
+        </div>
+
+        <h3 class="subheading">اختر طريقة التدريب</h3>
+        <div class="mode-grid">
+          <button class="mode-card" data-mode="examen" aria-pressed="true">
+            <span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>
+            <div class="mode-top">
+              <span class="mode-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <b>وضع الامتحان</b>
+            </div>
+            <p>مؤقت زمني، تنقل حر بين الأسئلة، ولا تظهر الإجابات الصحيحة إلا بعد إنهاء الاختبار.</p>
+          </button>
+
+          <button class="mode-card" data-mode="entrainement" aria-pressed="false">
+            <span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>
+            <div class="mode-top">
+              <span class="mode-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V5a2 2 0 0 1 2-2h11a3 3 0 0 1 3 3v15H6a2 2 0 0 1-2-1.5Z"/><path d="M8 7h8M8 11h6"/></svg></span>
+              <b>وضع التدريب</b>
+            </div>
+            <p>بدون مؤقت. ثبّت إجابتك لكل سؤال لتحصل فوراً على التصحيح والشرح قبل الانتقال للسؤال التالي.</p>
+          </button>
+        </div>
+
+        <div class="notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4m0 4h.01"/><path d="M10.3 3.6 2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z"/></svg>
+          <span id="scoring-note">في الأسئلة متعددة الإجابات قد تحصل على رصيد جزئي، وقد تخسر جزءاً من الرصيد عند اختيار إجابة خاطئة. لا يمكن أن تقل نقطة السؤال عن صفر.</span>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="start-exam">ابدأ الاختبار</button>
+          <button class="btn btn-secondary" id="brief-back">رجوع</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exam -->
+    <section id="screen-exam" class="hidden">
+      <div class="exam-workspace">
+        <article class="panel question-panel">
+          <div class="question-top">
+            <div class="q-counter" id="q-counter">السؤال 1</div>
+            <div class="q-tags">
+              <span class="q-tag" id="q-domain"></span>
+              <span class="q-tag" id="q-difficulty"></span>
+              <span class="q-tag points" id="q-points"></span>
+            </div>
+          </div>
+          <div class="question-body">
+            <div class="question-text" id="q-text"></div>
+            <div class="instruction" id="q-instruction"></div>
+            <div id="q-options"></div>
+            <div id="q-feedback"></div>
+
+            <div class="question-actions">
+              <button class="btn btn-secondary" id="prev-q">السابق</button>
+              <button class="btn btn-secondary" id="mark-q">وضع علامة</button>
+              <span class="grow"></span>
+              <button class="btn btn-primary" id="next-q">التالي</button>
+              <button class="btn btn-danger" id="finish-exam">إنهاء الاختبار</button>
+            </div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="panel side-card">
+            <div class="side-title">التقدم <span id="progress-label">0 / 0</span></div>
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+            <div class="progress-line"><span id="answered-label">0 مجاب</span><span id="marked-label">0 معلّم</span></div>
+          </div>
+          <div class="panel side-card" id="timer-card">
+            <div class="timer-box">
+              <div>
+                <div class="side-title" style="margin:0">الوقت المتبقي</div>
+                <div style="font-size:10px;color:var(--muted)">وضع الامتحان</div>
+              </div>
+              <div class="timer" id="timer">00:00</div>
+            </div>
+          </div>
+          <div class="panel side-card nav-card">
+            <div class="side-title">الأسئلة <span>انقر للتنقل</span></div>
+            <div class="nav-grid" id="q-nav"></div>
+            <div class="legend">
+              <span><i class="dot cur"></i> الحالي</span>
+              <span><i class="dot ans"></i> مجاب</span>
+              <span><i class="dot mark"></i> معلّم</span>
+              <span><i class="dot"></i> بدون إجابة</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="screen-results" class="hidden">
+      <div class="result-hero">
+        <div class="result-grid">
+          <div class="score-ring" id="score-ring">
+            <div class="score-inner"><b id="result-percent">0%</b><span id="result-score">0 / 0</span></div>
+          </div>
+          <div class="result-copy">
+            <h2 id="result-title">انتهى الاختبار</h2>
+            <p id="result-summary"></p>
+            <span class="verdict" id="result-verdict"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-body">
+        <div class="panel result-card">
+          <h3>النتيجة حسب المادة</h3>
+          <div id="domain-results"></div>
+        </div>
+        <div class="panel result-card">
+          <h3>ماذا تراجع أولاً؟</h3>
+          <p style="color:var(--muted);font-size:13px;margin:0" id="result-advice"></p>
+          <div class="actions">
+            <button class="btn btn-primary" id="retry-exam">إعادة الاختبار</button>
+            <button class="btn btn-secondary" id="other-exam">اختبار آخر</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:28px">
+        <div><h2>التصحيح التفصيلي</h2><p>راجع إجابتك، الإجابات الصحيحة، والتفسير المرفق بكل سؤال.</p></div>
+      </div>
+      <div class="review-list" id="review-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>منصة تدريبية مستقلة</span> · <span>لا تمثل جهة رسمية</span> · <span id="footer-version"></span>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const $ = (s, root=document) => root.querySelector(s);
+    const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+    const make = (tag, cls) => { const n=document.createElement(tag); if(cls) n.className=cls; return n; };
+    const round2 = n => Math.round((Number(n)+Number.EPSILON)*100)/100;
+    const fmt = n => round2(n).toLocaleString("ar", {maximumFractionDigits:2});
+    const shuffle = arr => { const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+    const icon = name => ({
+      book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V5a2 2 0 0 1 2-2h11a3 3 0 0 1 3 3v15H6a2 2 0 0 1-2-1.5Z"/><path d="M8 7h8M8 11h6"/></svg>',
+      clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+      list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg>',
+      star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>',
+      check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg>',
+      arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m6-6-6 6 6 6"/></svg>'
+    }[name] || '');
+
+    let manifest = null;
+    let examMeta = null;
+    let exam = null;
+    let mode = "examen";
+    let order = [];
+    let optionOrder = [];
+    let state = [];
+    let pos = 0;
+    let timerId = null;
+    let remaining = 0;
+    let examRunning = false;
+
+    function show(screen){
+      ["catalogue","briefing","exam","results"].forEach(x => {
+        $("#screen-"+x).classList.toggle("hidden", x !== screen);
+      });
+      $("#hero").classList.toggle("hidden", screen !== "catalogue");
+      window.scrollTo({top:0, behavior:"smooth"});
+    }
+
+    function setStatus(text, extra=""){
+      $("#status-text").textContent=text;
+      $("#status-extra").textContent=extra;
+    }
+
+    function durationLabel(min){
+      const m=Number(min)||0;
+      if(m>=60 && m%60===0) return `${m/60} ساعة`;
+      if(m>=60) return `${Math.floor(m/60)} س و${m%60} د`;
+      return `${m} دقيقة`;
+    }
+
+    function examPoints(data){
+      if(Number.isFinite(Number(data.total_points))) return Number(data.total_points);
+      return round2((data.questions||[]).reduce((s,q)=>s+(Number(q.points)||1),0));
+    }
+
+    function difficultyLabel(d){
+      const n=Number(d)||1;
+      return n<=1 ? "أساسي" : n===2 ? "متوسط" : "تحليلي";
+    }
+
+    function scoreQuestion(q, selected){
+      const points=Number(q.points)||1;
+      const correct=q.options.filter(o=>o.correcte).map(o=>o.id);
+      const n=correct.length||1;
+      const pickedCorrect=selected.filter(id=>correct.includes(id)).length;
+      const pickedWrong=selected.filter(id=>!correct.includes(id)).length;
+      const ratio=Math.max(0,Math.min(1,(pickedCorrect-pickedWrong)/n));
+      return round2(ratio*points);
+    }
+
+    function resultClass(q,selected){
+      const p=scoreQuestion(q,selected), max=Number(q.points)||1;
+      return p>=max-.0001 ? "correct" : p>0 ? "partial" : "wrong";
+    }
+
+    function updateManifestBrand(){
+      const title=manifest.site_titre || manifest.titre || "التحضير للمسابقات الوطنية";
+      const sub=manifest.site_sous_titre || manifest.sous_titre || "اختبارات تجريبية";
+      document.title=title;
+      $("#nav-title").textContent=title;
+      $("#nav-subtitle").textContent=sub;
+      $("#hero-title").textContent=title;
+      $("#hero-subtitle").textContent=manifest.description || sub;
+      $("#footer-version").textContent=manifest.version_manifeste ? `الإصدار ${manifest.version_manifeste}` : "";
+
+      const published=(manifest.epreuves||[]).filter(e=>e.statut!=="brouillon");
+      const latest=published[0]||{};
+      $("#hero-exams").textContent=published.length;
+      $("#hero-questions").textContent=latest.questions ?? "—";
+      $("#hero-duration").textContent=latest.duree_min ?? "—";
+      $("#hero-points").textContent=latest.total_points ?? "—";
+      const domains=manifest.domaines || manifest.domaines_epreuve_D || [];
+      $("#hero-domains").innerHTML="";
+      domains.forEach(d=>{ const s=make("span"); s.textContent=d; $("#hero-domains").appendChild(s); });
+    }
+
+    async function loadManifest(){
+      if(location.protocol === "file:"){
+        renderCatalogueError("يجب تشغيل الصفحة عبر خادم ويب حتى تتمكن من قراءة ملفات JSON.", "استعمل GitHub Pages أو شغّل محلياً: npx serve");
+        return;
+      }
+      try{
+        const r=await fetch("exams/manifest.json",{cache:"no-store"});
+        if(!r.ok) throw new Error(`HTTP ${r.status}`);
+        manifest=await r.json();
+        updateManifestBrand();
+        renderCatalogue();
+        const slug=new URLSearchParams(location.search).get("exam");
+        if(slug){
+          const meta=(manifest.epreuves||[]).find(e=>e.slug===slug && e.statut!=="brouillon");
+          if(meta) await openExam(meta,false);
+        }
+      }catch(err){
+        console.error(err);
+        renderCatalogueError("تعذر تحميل قائمة الاختبارات.", "تحقق من وجود exams/manifest.json ومن صحة بنية JSON.");
+      }
+    }
+
+    function renderCatalogueError(title,msg){
+      $("#catalogue-count").textContent="خطأ في التحميل";
+      $("#exam-list").innerHTML=`<div class="error-box" style="grid-column:1/-1"><b>${title}</b><span>${msg}</span></div>`;
+    }
+
+    function renderCatalogue(){
+      const box=$("#exam-list"); box.innerHTML="";
+      const exams=manifest.epreuves||[];
+      $("#catalogue-count").textContent=`${exams.filter(e=>e.statut!=="brouillon").length} اختبار متاح`;
+      if(!exams.length){ box.innerHTML='<div class="panel empty-state" style="grid-column:1/-1">لا يوجد اختبار منشور حالياً.</div>'; return; }
+
+      exams.forEach(meta=>{
+        const draft=meta.statut==="brouillon";
+        const card=make("button","exam-card");
+        card.disabled=draft;
+        card.innerHTML=`
+          <div class="exam-head">
+            <div class="exam-title"><b></b></div>
+            <div class="exam-icon">${icon("book")}</div>
+          </div>
+          <p class="exam-summary"></p>
+          <div class="exam-meta"></div>
+          <div class="exam-footer">
+            <span class="open-label">${draft?"غير منشور":"فتح الاختبار"} ${icon("arrow")}</span>
+            <span class="status ${draft?"draft":""}">${draft?"مسودة":"متاح"}</span>
+          </div>`;
+        $(".exam-title b",card).textContent=meta.titre||meta.slug||"اختبار";
+        $(".exam-summary",card).textContent=meta.resume||"";
+        const chips=[
+          [icon("list"),meta.questions?`${meta.questions} سؤال`:null],
+          [icon("clock"),meta.duree_min?durationLabel(meta.duree_min):null],
+          [icon("star"),meta.total_points?`${fmt(meta.total_points)} نقطة`:null],
+          ["",meta.niveau||null]
+        ].filter(x=>x[1]);
+        const metaBox=$(".exam-meta",card);
+        chips.forEach(([ic,txt])=>{ const s=make("span","meta-chip"); s.innerHTML=ic; const t=document.createTextNode(txt); s.appendChild(t); metaBox.appendChild(s); });
+        if(!draft) card.onclick=()=>openExam(meta,true);
+        box.appendChild(card);
+      });
+    }
+
+    async function openExam(meta,pushUrl=true){
+      try{
+        setStatus("تحميل الاختبار…");
+        const r=await fetch(meta.fichier,{cache:"no-store"});
+        if(!r.ok) throw new Error(`HTTP ${r.status}`);
+        exam=await r.json(); examMeta=meta;
+        if(!Array.isArray(exam.questions)||!exam.questions.length) throw new Error("No questions");
+
+        $("#brief-title").textContent=exam.titre||meta.titre||"الاختبار";
+        $("#brief-desc").textContent=exam.sous_titre||meta.resume||"";
+        $("#fact-questions").textContent=exam.questions.length;
+        $("#fact-duration").textContent=durationLabel(exam.duree_min||meta.duree_min||0);
+        $("#fact-points").textContent=`${fmt(examPoints(exam))} نقطة`;
+        $("#fact-format").textContent=exam.format==="comite"?"صيغة اللجنة":"QCM";
+        if(exam.bareme?.formule) $("#scoring-note").textContent="في الأسئلة متعددة الإجابات يطبّق رصيد جزئي مع خصم الاختيارات الخاطئة، مع حد أدنى صفر للسؤال. يتم احتساب وزن كل سؤال حسب عدد نقاطه.";
+
+        if(pushUrl) history.replaceState(null,"",`${location.pathname}?exam=${encodeURIComponent(meta.slug)}`);
+        setStatus("جاهز");
+        show("briefing");
+      }catch(err){
+        console.error(err); setStatus("خطأ");
+        alert("تعذر تحميل ملف الاختبار. تحقق من المسار الموجود في manifest.json.");
+      }
+    }
+
+    function startExam(){
+      const qCount=exam.questions.length;
+      const shuffleQuestions=exam.melanger_questions !== false;
+      const shuffleOptions=exam.melanger_options !== false;
+      order=shuffleQuestions?shuffle([...Array(qCount).keys()]):[...Array(qCount).keys()];
+      optionOrder=exam.questions.map(q=>shuffleOptions?shuffle([...Array(q.options.length).keys()]):[...Array(q.options.length).keys()]);
+      state=exam.questions.map(()=>({selected:[],marked:false,validated:false}));
+      pos=0; examRunning=true;
+      clearInterval(timerId);
+      $("#timer-card").classList.toggle("hidden",mode!=="examen");
+      if(mode==="examen"){
+        remaining=Math.max(1,Number(exam.duree_min||examMeta?.duree_min||0))*60;
+        timerId=setInterval(tick,1000); tick(); setStatus("اختبار جارٍ");
+      }else{
+        setStatus("وضع التدريب");
+      }
+      show("exam"); renderQuestion();
+    }
+
+    function tick(){
+      const m=Math.floor(remaining/60),s=remaining%60;
+      $("#timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+      $("#timer").classList.toggle("danger",remaining<=300);
+      if(remaining<=0){ clearInterval(timerId); finishExam(true); return; }
+      remaining--;
+    }
+
+    function current(){ const qi=order[pos]; return {qi,q:exam.questions[qi],st:state[qi]}; }
+
+    function updateProgress(){
+      const answered=state.filter(x=>x.selected.length).length;
+      const marked=state.filter(x=>x.marked).length;
+      const pct=order.length?((pos+1)/order.length*100):0;
+      $("#progress-fill").style.width=`${pct}%`;
+      $("#progress-label").textContent=`${pos+1} / ${order.length}`;
+      $("#answered-label").textContent=`${answered} مجاب`;
+      $("#marked-label").textContent=`${marked} معلّم`;
+    }
+
+    function renderNav(){
+      const box=$("#q-nav"); box.innerHTML="";
+      order.forEach((qi,i)=>{
+        const b=make("button","qnav"); b.textContent=i+1;
+        if(state[qi].selected.length) b.classList.add("answered");
+        if(state[qi].marked) b.classList.add("marked");
+        if(i===pos) b.classList.add("current");
+        b.setAttribute("aria-label",`السؤال ${i+1}`);
+        b.onclick=()=>{ pos=i; renderQuestion(); };
+        box.appendChild(b);
+      });
+    }
+
+    function selectOption(qi,q,st,id,checked){
+      if(mode==="entrainement" && st.validated) return;
+      if(q.type==="multiple"){
+        st.selected=checked?[...new Set([...st.selected,id])]:st.selected.filter(x=>x!==id);
+      }else st.selected=[id];
+      renderQuestion();
+    }
+
+    function renderQuestion(){
+      const {qi,q,st}=current();
+      const locked=mode==="entrainement" && st.validated;
+      $("#q-counter").textContent=`السؤال ${pos+1} من ${order.length}`;
+      $("#q-domain").textContent=q.domaine||"";
+      $("#q-difficulty").textContent=`${difficultyLabel(q.difficulte)} · ${"●".repeat(Math.min(3,Number(q.difficulte)||1))}${"○".repeat(Math.max(0,3-(Number(q.difficulte)||1)))}`;
+      $("#q-points").textContent=`${fmt(Number(q.points)||1)} نقطة`;
+      $("#q-text").textContent=q.enonce||"";
+      $("#q-instruction").innerHTML= q.type==="multiple"
+        ? `${icon("list")} <span>يمكن أن تكون عدة إجابات صحيحة — اختر كل الإجابات التي تراها صحيحة ثم ثبّت إجابتك.</span>`
+        : `${icon("check")} <span>إجابة واحدة صحيحة.</span>`;
+
+      const opts=$("#q-options"); opts.innerHTML="";
+      optionOrder[qi].forEach(oi=>{
+        const o=q.options[oi], selected=st.selected.includes(o.id);
+        const lab=make("label",`option ${q.type==="multiple"?"checkbox":"radio"}${selected?" selected":""}${locked?" locked":""}`);
+        const inp=make("input"); inp.type=q.type==="multiple"?"checkbox":"radio"; inp.name=`q-${qi}`; inp.checked=selected; inp.disabled=locked;
+        inp.onchange=()=>selectOption(qi,q,st,o.id,inp.checked);
+        const mark=make("span","choice-mark"); mark.innerHTML=icon("check");
+        const text=make("span","choice-text"); text.textContent=o.texte;
+        lab.append(inp,mark,text); opts.appendChild(lab);
+      });
+
+      const fb=$("#q-feedback"); fb.innerHTML="";
+      if(locked) fb.appendChild(buildFeedback(q,st.selected,true));
+
+      $("#prev-q").disabled=pos===0;
+      $("#mark-q").textContent=st.marked?"إزالة العلامة":"وضع علامة";
+      $("#next-q").textContent=(mode==="entrainement" && !st.validated)?"تثبيت الإجابة":(pos===order.length-1?"عرض النتائج":"التالي");
+      $("#next-q").disabled=(mode==="entrainement" && !st.validated && !st.selected.length);
+      $("#finish-exam").classList.toggle("hidden",mode==="entrainement");
+      renderNav(); updateProgress();
+    }
+
+    function nextQuestion(){
+      const {st}=current();
+      if(mode==="entrainement" && !st.validated){
+        if(!st.selected.length) return;
+        st.validated=true; renderQuestion(); return;
+      }
+      if(pos===order.length-1){ finishExam(false); return; }
+      pos++; renderQuestion(); window.scrollTo({top:0,behavior:"smooth"});
+    }
+
+    function buildFeedback(q,selected,compact=false){
+      const score=scoreQuestion(q,selected),max=Number(q.points)||1,cls=resultClass(q,selected);
+      const card=make("div",`feedback-card ${cls}`);
+      const label=cls==="correct"?"إجابة صحيحة":cls==="partial"?"إجابة صحيحة جزئياً":"إجابة غير صحيحة";
+      card.innerHTML=`<div class="feedback-head"><strong>${label}</strong><span class="feedback-score">${fmt(score)} / ${fmt(max)}</span></div>`;
+      q.options.forEach(o=>{
+        const picked=selected.includes(o.id);
+        if(compact && !picked && !o.correcte) return;
+        const row=make("div",`review-option ${o.correcte?"good":picked?"bad-picked":""}`);
+        const lab=make("div",`review-label ${o.correcte?"good":picked?"bad":""}`);
+        lab.textContent=o.correcte?(picked?"إجابة صحيحة — اخترتها":"إجابة صحيحة — لم تخترها"):(picked?"اختيار غير صحيح":"يُستبعد");
+        const text=make("div"); text.textContent=o.texte;
+        row.append(lab,text);
+        if((picked||o.correcte)&&o.feedback){ const f=make("div","review-fb"); f.textContent=o.feedback; row.appendChild(f); }
+        card.appendChild(row);
+      });
+      if(q.feedback_general){ const g=make("div","general-fb"); g.textContent=q.feedback_general; card.appendChild(g); }
+      if(q.source){ const s=make("div","source"); s.textContent=`المصدر/المرجع: ${q.source}`; card.appendChild(s); }
+      return card;
+    }
+
+    function finishExam(auto=false){
+      if(!examRunning) return;
+      if(!auto && mode==="examen"){
+        const unanswered=state.filter(x=>!x.selected.length).length;
+        const msg=unanswered?`ما زال لديك ${unanswered} سؤال بدون إجابة. هل تريد إنهاء الاختبار؟`:"هل تريد إنهاء الاختبار وعرض النتيجة؟";
+        if(!confirm(msg)) return;
+      }
+      examRunning=false; clearInterval(timerId); setStatus(auto?"انتهى الوقت":"اكتمل الاختبار"); renderResults(); show("results");
+    }
+
+    function renderResults(){
+      let total=0,score=0;
+      const domains={};
+      exam.questions.forEach((q,i)=>{
+        const max=Number(q.points)||1,p=scoreQuestion(q,state[i].selected);
+        total+=max; score+=p;
+        if(!domains[q.domaine]) domains[q.domaine]={score:0,max:0};
+        domains[q.domaine].score+=p; domains[q.domaine].max+=max;
+      });
+      total=round2(total); score=round2(score);
+      const pct=total?score/total*100:0;
+      $("#score-ring").style.setProperty("--score-angle",`${pct*3.6}deg`);
+      $("#result-percent").textContent=`${Math.round(pct)}%`;
+      $("#result-score").textContent=`${fmt(score)} / ${fmt(total)}`;
+      $("#result-title").textContent=pct>=75?"أداء قوي":pct>=50?"نتيجة قابلة للتحسين":"تحتاج إلى مراجعة مركزة";
+      $("#result-summary").textContent=`أجبت على ${state.filter(x=>x.selected.length).length} سؤالاً من أصل ${exam.questions.length}. النتيجة محسوبة وفق أوزان الأسئلة والرصيد الجزئي.`;
+      $("#result-verdict").textContent=pct>=75?"مستوى جيد للمحاكاة":pct>=50?"واصل التدريب على نقاط الضعف":"ابدأ بالمجالات الأضعف ثم أعد المحاولة";
+
+      const domBox=$("#domain-results"); domBox.innerHTML="";
+      const weak=[];
+      Object.entries(domains).sort((a,b)=>a[1].score/a[1].max-b[1].score/b[1].max).forEach(([name,v])=>{
+        const r=v.max?v.score/v.max:0; if(r<.6) weak.push(name);
+        const row=make("div","domain-row");
+        row.innerHTML=`<div class="domain-head"><b></b><span>${fmt(v.score)} / ${fmt(v.max)}</span></div><div class="domain-bar"><div class="domain-fill ${r<.5?"low":r<.75?"medium":""}"></div></div>`;
+        $(".domain-head b",row).textContent=name;
+        domBox.appendChild(row); requestAnimationFrame(()=>{$(".domain-fill",row).style.width=`${Math.max(0,Math.min(100,r*100))}%`;});
+      });
+      $("#result-advice").textContent=weak.length?`ابدأ بمراجعة: ${weak.join("، ")}. راجع التصحيح التفصيلي وحدد سبب الخطأ قبل إعادة الاختبار.`:"لا توجد مادة تحت 60٪. ركز الآن على السرعة والدقة في وضع الامتحان.";
+
+      const review=$("#review-list"); review.innerHTML="";
+      exam.questions.forEach((q,i)=>{
+        const cls=resultClass(q,state[i].selected);
+        const item=make("div",`review-item ${cls}`);
+        const meta=make("div","q-tags");
+        [`${q.id}`,q.domaine,`${fmt(scoreQuestion(q,state[i].selected))} / ${fmt(Number(q.points)||1)}`].forEach(t=>{const s=make("span","q-tag");s.textContent=t;meta.appendChild(s);});
+        const text=make("div","question-text"); text.textContent=q.enonce;
+        item.append(meta,text,buildFeedback(q,state[i].selected,false));
+        review.appendChild(item);
+      });
+    }
+
+    function resetToCatalogue(){
+      clearInterval(timerId); examRunning=false; exam=null; examMeta=null; order=[]; state=[]; optionOrder=[]; pos=0;
+      history.replaceState(null,"",location.pathname); setStatus("جاهز"); show("catalogue");
+    }
+
+    // Modes
+    $$(".mode-card").forEach(btn=>btn.onclick=()=>{
+      mode=btn.dataset.mode;
+      $$(".mode-card").forEach(x=>x.setAttribute("aria-pressed",String(x===btn)));
+      $("#start-exam").textContent=mode==="examen"?"ابدأ وضع الامتحان":"ابدأ التدريب";
+    });
+
+    $("#start-exam").onclick=startExam;
+    $("#back-catalogue").onclick=resetToCatalogue;
+    $("#brief-back").onclick=resetToCatalogue;
+    $("#prev-q").onclick=()=>{ if(pos>0){pos--;renderQuestion();window.scrollTo({top:0,behavior:"smooth"});} };
+    $("#mark-q").onclick=()=>{ const {st}=current(); st.marked=!st.marked; renderQuestion(); };
+    $("#next-q").onclick=nextQuestion;
+    $("#finish-exam").onclick=()=>finishExam(false);
+    $("#retry-exam").onclick=()=>{ setStatus("جاهز"); show("briefing"); };
+    $("#other-exam").onclick=resetToCatalogue;
+
+    window.addEventListener("beforeunload",e=>{ if(examRunning){ e.preventDefault(); e.returnValue=""; } });
+    loadManifest();
+  </script>
+</body>
+</html>
