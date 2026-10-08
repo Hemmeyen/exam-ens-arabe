@@ -4,7 +4,7 @@
   "sous_titre": "محاكاة تدريبية بصيغة الاختيار من متعدد — اللغة العربية، الرياضيات، التربية الإسلامية",
   "version": "60 سؤالًا · 120 نقطة · صيغة اللجنة · باللغة العربية",
   "format": "comite",
-  "duree_min": 180,
+  "duree_min": 120,
   "total_points": 120.0,
   "bareme": {
     "points_variables": true,
