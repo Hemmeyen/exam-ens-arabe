@@ -2,7 +2,7 @@
   "site_titre": "التحضير لمسابقة اكتتاب المعلمين — معلم رئيسي عربي",
   "site_sous_titre": "اختبارات تجريبية قابلة للتوسعة بصيغة QCM",
   "description": "مشروع اختبارات مستمر: يضاف كل موضوع جديد في ملف JSON مستقل، ثم يسجل في manifest.json دون تغيير منطق الموقع.",
-  "version_manifeste": "2026-AR-B",
+  "version_manifeste": "2026-AR-E",
   "domaines": [
     "اللغة العربية",
     "الرياضيات",
@@ -30,11 +30,39 @@
       "duree_min": 180,
       "total_points": 120.0,
       "statut": "publie"
+    },
+    {
+      "slug": "enseignant-principal-arabe-C",
+      "fichier": "exams/enseignant-principal-arabe-C.json",
+      "titre": "الاختبار ج — محاكاة وضعية المسابقة",
+      "resume": "60 سؤالًا جديدًا: 30 في اللغة العربية، 20 في الرياضيات، و10 في التربية الإسلامية. تركيز أكبر على الفهم والاستنتاج، تصحيح أخطاء المتعلمين، والمسائل متعددة الخطوات.",
+      "niveau": "متدرج: أساسي إلى تحليلي",
+      "questions": 60,
+      "duree_min": 180,
+      "total_points": 120.0,
+      "statut": "publie"
+    },
+    {
+      "slug": "enseignant-principal-arabe-D",
+      "fichier": "exams/enseignant-principal-arabe-D.json",
+      "titre": "الاختبار د — محاكاة مبنية على الأدلة الرسمية",
+      "resume": "60 سؤالًا باللغة العربية: 30 في اللغة العربية، 20 في الرياضيات، و10 في التربية الإسلامية. المحتوى مبني مباشرة على أدلة 2025 و2026 الرسمية مع أسئلة تطبيقية ووضعيات قريبة من نمط QCM.",
+      "niveau": "متدرج: أساسي إلى تحليلي",
+      "questions": 60,
+      "duree_min": 180,
+      "total_points": 120.0,
+      "statut": "publie"
+    },
+    {
+      "slug": "enseignant-principal-arabe-E",
+      "fichier": "exams/enseignant-principal-arabe-E.json",
+      "titre": "الاختبار هـ — محاكاة تطبيقية مبنية على الأدلة الرسمية",
+      "resume": "60 سؤالًا جديدًا: 30 في اللغة العربية، 20 في الرياضيات، و10 في التربية الإسلامية. تركيز على التطبيق، تشخيص أخطاء المتعلمين، التناسبية والقياس، وفهم النصوص والقواعد ضمن وحدات الأدلة الرسمية.",
+      "niveau": "متدرج: 15 أساسي · 25 متوسط · 20 تحليلي",
+      "questions": 60,
+      "duree_min": 180,
+      "total_points": 120.0,
+      "statut": "publie"
     }
-  ],
-  "domaines_epreuve_D": [
-    "اللغة العربية",
-    "الرياضيات",
-    "التربية الإسلامية"
   ]
 }
